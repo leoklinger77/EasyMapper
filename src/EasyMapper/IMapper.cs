@@ -1,5 +1,5 @@
 ﻿namespace EasyMapper {
-	public interface ICustomMapper {
+	public interface IMapper {
 		TDestination Map<TSource, TDestination>(TSource source);
 	}
 }

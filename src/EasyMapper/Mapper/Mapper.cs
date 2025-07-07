@@ -1,9 +1,9 @@
 ﻿namespace EasyMapper.Mapper {
 	using System.Reflection;
-	public class CustomMapper : ICustomMapper {
+	public class Mapper : IMapper {
 		private readonly IEnumerable<MapperProfile> _profiles;
 
-		public CustomMapper(IEnumerable<MapperProfile> profiles) {
+		public Mapper(IEnumerable<MapperProfile> profiles) {
 			_profiles = profiles;
 		}
 
