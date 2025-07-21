@@ -2,7 +2,7 @@
 	using System.Linq.Expressions;
 	public class MapperProfile {
 		private readonly Dictionary<(Type source, Type destination, string destProp), Delegate> _customMappings
-			= new();
+			= [];
 		public MapBuilder<TSource, TDestination> FromMap<TSource, TDestination>(Expression<Func<TDestination, object>> destMember, Expression<Func<TSource, object>> srcMember) {
 			var builder = new MapBuilder<TSource, TDestination>(this);
 			builder.Map(destMember, srcMember);

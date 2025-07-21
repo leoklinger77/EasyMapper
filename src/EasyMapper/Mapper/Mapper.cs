@@ -8,6 +8,10 @@
 		}
 
 		public TDestination Map<TSource, TDestination>(TSource source) {
+			if (source is null) {
+                return default!;
+            }
+
 			var sourceType = typeof(TSource);
 			var destType = typeof(TDestination);
 
