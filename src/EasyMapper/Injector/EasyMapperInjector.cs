@@ -12,7 +12,7 @@
 				services.AddSingleton(profileType, type);
 			}
 
-			services.AddSingleton<ICustomMapper, CustomMapper>();
+			services.AddSingleton<IMapper, Mapper>();
 		}
 	}
 }

@@ -1,13 +1,17 @@
 ﻿namespace EasyMapper.Mapper {
 	using System.Reflection;
-	public class CustomMapper : ICustomMapper {
+	public class Mapper : IMapper {
 		private readonly IEnumerable<MapperProfile> _profiles;
 
-		public CustomMapper(IEnumerable<MapperProfile> profiles) {
+		public Mapper(IEnumerable<MapperProfile> profiles) {
 			_profiles = profiles;
 		}
 
 		public TDestination Map<TSource, TDestination>(TSource source) {
+			if (source is null) {
+                return default!;
+            }
+
 			var sourceType = typeof(TSource);
 			var destType = typeof(TDestination);
 
